@@ -9,7 +9,7 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-    let mstep1 = a+b;
+    let step1 = a+b;
     let step2 = step1.toString();
     return step2;
 }
