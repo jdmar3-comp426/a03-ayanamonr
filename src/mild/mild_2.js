@@ -28,8 +28,8 @@ export function identifyVariable(variable) {
 export function identifyArray(array) {
    const returnarray = []
    for (let i = 0; i< array.length; i++) {
-      let type = array[i].splice(0,1)
-      let value = array[i].splice(1,2)
+      let type = typeof(array[i])
+      let value = array[i]
       returnarray.concat[type, value]
   }
   return returnarray
