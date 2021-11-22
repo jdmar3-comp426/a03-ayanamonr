@@ -28,11 +28,9 @@ export function sumToString(a, b) {
 export function getIncreasingArray(startNumber, endNumber) {
     const returnarray = [];
     let currentnumber = startNumber;
-    while (i < endNumber) {
-        returnarray.push(currentnumber);
-        currentnumber++;
-        i++;
-      }
+    for (let i = startNumber; i<= endNumber; i++) {
+        returnarray.push(i);
+    }
     return returnarray;
 }
 
