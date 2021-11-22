@@ -9,8 +9,9 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-    var returnval = a+b
-    return returnval.toString()
+    let returnnum = a+b
+    let returnstring = a+'+'+b+'='+returnnum
+    return returnstring
 }
 
 
@@ -32,6 +33,7 @@ export function getIncreasingArray(startNumber, endNumber) {
         currentnumber++;
         i++;
       }
+      return returnarray;
 }
 
 /**
