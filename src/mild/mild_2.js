@@ -30,7 +30,7 @@ export function identifyArray(array) {
    for (let i = 0; i< array.length; i++) {
       let type = typeof(array[i])
       let value = array[i]
-      returnarray.concat[type, value]
+      returnarray.append([type, value])
   }
   return returnarray
 }
