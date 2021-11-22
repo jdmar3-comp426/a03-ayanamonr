@@ -31,7 +31,7 @@ export function identifyArray(array) {
       let type = typeof(array[i])
       let value = array[i]
       const steparray = [type, value]
-      returnarray.append(steparray)
+      returnarray.push(steparray)
   }
   return returnarray
 }
