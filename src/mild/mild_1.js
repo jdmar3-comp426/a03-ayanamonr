@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let returnnum = a+b
-    let returnstring = a+'+'+b+'='+returnnum
+    let returnstring = a+' + '+b+' = ' +returnnum
     return returnstring
 }
 
@@ -26,14 +26,14 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-    const returnarray = [startNumber];
-    let currentnumber = startNumber;
-    while (i < endNumber) {
-        returnarray.push(currentnumber);
-        currentnumber++;
-        i++;
-      }
-      return returnarray;
+    // const returnarray = [startNumber];
+    // let currentnumber = startNumber;
+    // while (i < endNumber) {
+    //     returnarray.push(currentnumber);
+    //     currentnumber++;
+    //     i++;
+    //   }
+    //   return returnarray;
 }
 
 /**
