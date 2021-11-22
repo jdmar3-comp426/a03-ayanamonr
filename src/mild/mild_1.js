@@ -53,6 +53,9 @@ export function maxAndMin(numbers) {
             max = numbers[i]
         }
     }
+
+    max = ''+max
+    min = ''+min
     return {max, min}
 }
 
