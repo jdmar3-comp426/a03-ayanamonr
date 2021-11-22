@@ -26,14 +26,14 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-    // const returnarray = [startNumber];
-    // let currentnumber = startNumber;
-    // while (i < endNumber) {
-    //     returnarray.push(currentnumber);
-    //     currentnumber++;
-    //     i++;
-    //   }
-    //   return returnarray;
+    const returnarray = [];
+    let currentnumber = startNumber;
+    while (i < endNumber) {
+        returnarray.push(currentnumber);
+        currentnumber++;
+        i++;
+      }
+    return returnarray;
 }
 
 /**
