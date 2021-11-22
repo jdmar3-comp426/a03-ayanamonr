@@ -27,10 +27,11 @@ export function identifyVariable(variable) {
  */
 export function identifyArray(array) {
    const returnarray = []
-   for (let i = 0; i< array.length; i++) {
+   for (let i = 0; i < array.length; i++) {
       let type = typeof(array[i])
       let value = array[i]
-      returnarray.append([type, value])
+      const steparray = [type, value]
+      returnarray.append(steparray)
   }
   return returnarray
 }
