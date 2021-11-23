@@ -112,7 +112,7 @@ export function getStatistics(array) {
 
     returnarraygetstats.push(variance)
 
-    let sstandard_deviation = Math.sqrt(variance)
+    let standard_deviation = Math.sqrt(variance)
     returnarraygetstats.push(standard_deviation)
     return returnarraygetstats
 }
