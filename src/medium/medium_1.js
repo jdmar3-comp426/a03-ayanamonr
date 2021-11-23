@@ -88,7 +88,7 @@ export function getStatistics(array) {
              min = array[i]
          }
 
-         if (numbers[i] > max){
+         if (array[i] > max){
             max = array[i]
         }
     }
