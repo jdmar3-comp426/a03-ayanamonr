@@ -101,11 +101,11 @@ export function getStatistics(array) {
     let variance = 0
 
     for (let i = 0; i < array.length; i++) {
-        if (array[i] < min){
-            let squareddif = ((array[i]-mean)*(array[i]-mean))
-            variance = variance + squareddif
-        }
+        let squareddif = ((array[i]-mean)*(array[i]-mean))
+        variance = variance + squareddif
+        
     }
+    variance = variance / array.length
 
     returnarraygetstats.push('variance: '+variance)
 
