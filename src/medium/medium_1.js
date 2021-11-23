@@ -76,11 +76,14 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
     const returnarraygetstats = []
-    returnarraygetstats.push('length: '+array.length)
-    returnarraygetstats.push('sum: '+ getSum(array))
+    let length = array.length
+    returnarraygetstats.push(length)
+    let sum =  getSum(array)
+    returnarraygetstats.push(sum)
     let mean = getSum(array)/array.length
-    returnarraygetstats.push ('mean: '+mean)
-    returnarraygetstats.push('median: '+ getMedian(array))
+    returnarraygetstats.push (mean)
+    let median = getMedian(array)
+    returnarraygetstats.push(median)
 
     let min = 100
     let max = -100
@@ -95,8 +98,8 @@ export function getStatistics(array) {
     }
 
     
-    returnarraygetstats.push('min: '+ min)
-    returnarraygetstats.push('max: ' +max)
+    returnarraygetstats.push(min)
+    returnarraygetstats.push(max)
 
     let variance = 0
 
@@ -107,10 +110,10 @@ export function getStatistics(array) {
     }
     variance = variance / array.length
 
-    returnarraygetstats.push('variance: '+variance)
+    returnarraygetstats.push(variance)
 
-    let sd = Math.sqrt(variance)
-    returnarraygetstats.push('standard_deviation: ' + sd)
+    let sstandard_deviation = Math.sqrt(variance)
+    returnarraygetstats.push(standard_deviation)
     return returnarraygetstats
 }
 
