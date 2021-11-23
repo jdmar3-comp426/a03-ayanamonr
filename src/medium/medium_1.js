@@ -45,12 +45,12 @@ export function getMedian(array) {
     // If length = odd
     if (lengthval % 2 == 1) {
         let returnval = array[(lengthval / 2) - .5]
+        return returnval
     }
     else {              
         let returnval = ((array[lengthval / 2] + array[(lengthval / 2) - 1])/ 2);
+        return returnval
     }
-
-    return returnval
 }
 
 
@@ -75,6 +75,9 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
+    const returnarraygetstats = []
+    returnarraygetstats.push(array.length)
+    returnarraygetstats.push(getSum(array))
 
 }
 
