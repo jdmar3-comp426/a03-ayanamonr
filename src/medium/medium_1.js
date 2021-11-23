@@ -78,6 +78,39 @@ export function getStatistics(array) {
     const returnarraygetstats = []
     returnarraygetstats.push(array.length)
     returnarraygetstats.push(getSum(array))
+    returnarraygetstats.push ((getSum(array)/array.length))
+    returnarraygetstats.push(getMedian(array))
 
+    let min = 100
+    let max = -100
+    for (let i = 0; i < array.length; i++) {
+         if (array[i] < min){
+             min = array[i]
+         }
+
+         if (numbers[i] > max){
+            max = array[i]
+        }
+    }
+
+    
+    returnarraygetstats.push(min)
+    returnarraygetstats.push(max)
+
+    let variance = 0
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < min){
+            let mean = getSum(array)/array.length
+            let squareddif = (array[i]-mean)*(array[i]-mean)
+            variance = variance + squareddif
+        }
+    }
+
+    returnarraygetstats.push(variance)
+
+    let sd = Math.sqrt(variance)
+    returnarraygetstats.push(sd)
+    return returnarraygetstats
 }
 
