@@ -78,7 +78,8 @@ export function getStatistics(array) {
     const returnarraygetstats = []
     returnarraygetstats.push('length: '+array.length)
     returnarraygetstats.push('sum: '+ getSum(array))
-    returnarraygetstats.push ('mean: '+(getSum(array)/array.length))
+    let mean = getSum(array)/array.length
+    returnarraygetstats.push ('mean: '+mean)
     returnarraygetstats.push('median: '+ getMedian(array))
 
     let min = 100
@@ -101,8 +102,7 @@ export function getStatistics(array) {
 
     for (let i = 0; i < array.length; i++) {
         if (array[i] < min){
-            let mean = getSum(array)/array.length
-            let squareddif = (array[i]-mean)*(array[i]-mean)
+            let squareddif = ((array[i]-mean)*(array[i]-mean))
             variance = variance + squareddif
         }
     }
