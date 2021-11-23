@@ -41,7 +41,7 @@ export function getMedian(array) {
 
     let lengthval = array.length;
 
-    let returnval = lengthval
+    //let returnval = lengthval
     // If length = odd
     if (lengthval % 2 == 1) {
         let returnval = array[(lengthval / 2) - .5]
