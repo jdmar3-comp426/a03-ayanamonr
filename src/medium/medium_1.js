@@ -26,17 +26,28 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    const sorted = array.sort();
+    var done = false;
+    while (!done) {
+        done = true;
+        for (var i = 1; i < array.length; i += 1) {
+            if (array[i - 1] > array[i]) {
+                done = false;
+                var tmp = array[i - 1];
+                array[i - 1] = array[i];
+                array[i] = tmp;
+            }
+        }
+    }
 
-    let length = sorted.length;
+    let lengthval = array.length;
 
-    let returnval = length
+    let returnval = lengthval
     // If length = odd
-    if (length % 2 == 1) {
-        let returnval = array[(length / 2) - .5]
+    if (lengthval % 2 == 1) {
+        let returnval = array[(lengthval / 2) - .5]
     }
     else {              
-        let returnval = ((array[length / 2] + array[(length / 2) - 1])/ 2);
+        let returnval = ((array[lengthval / 2] + array[(lengthval / 2) - 1])/ 2);
     }
 
     return returnval
