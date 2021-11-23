@@ -77,7 +77,7 @@ export function getMedian(array) {
 export function getStatistics(array) {
     const returnarraygetstats = []
     returnarraygetstats.push('length: '+array.length)
-    returnarraygetstats.push(getSum('sum: '+ array))
+    returnarraygetstats.push('sum: '+ getSum(array))
     returnarraygetstats.push ('mean: '+(getSum(array)/array.length))
     returnarraygetstats.push('median: '+ getMedian(array))
 
