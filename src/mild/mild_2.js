@@ -30,7 +30,7 @@ export function identifyArray(array) {
    for (let i = 0; i < array.length; i++) {
       let type = typeof(array[i])
       let value = array[i]
-      const steparray = [type, value]
+      const steparray = ['type: '+type, value]
       returnarray.push(steparray)
   }
   return returnarray
