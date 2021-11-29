@@ -79,12 +79,11 @@ export function countArray(array) {
                    amount = amount + 1
                } 
             }
-        }
+            returndict[array[i]] = amount;
 
-
-        
         }
-        return returndict
     }
+        return returndict
+}
 
 
