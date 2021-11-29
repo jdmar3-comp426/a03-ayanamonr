@@ -70,6 +70,21 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    
+    let returndict = {};
+    for (let i = 0; i < array.length; i++){
+        if (returndict[array[i]]== null){ //if there's nothing in this position and it hasn't occured alreadyyyy
+            let amount = 0
+            for (let j = 0; j < array.length; j++){
+               if (array[j] == array[i]){
+                   amount = amount + 1
+               } 
+            }
+        }
 
-}
+
+        
+        }
+        return returndict
+    }
+
+
