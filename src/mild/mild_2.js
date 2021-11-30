@@ -28,10 +28,7 @@ export function identifyVariable(variable) {
 export function identifyArray(array) {
    const returnarray = []
    for (let i = 0; i < array.length; i++) {
-      let type = typeof(array[i])
-      let value = type
-      const steparray = [type, array[i]]
-      returnarray.push(steparray)
+      returnarray.push(identifyVariable(i))
   }
   return returnarray
 }
