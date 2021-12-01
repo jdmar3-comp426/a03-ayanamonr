@@ -75,45 +75,31 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    const returnarraygetstats = []
-    let length = array.length
-    returnarraygetstats[0]=length
-    let sum =  getSum(array)
-    returnarraygetstats[1]=sum
-    let mean = getSum(array)/array.length
-    returnarraygetstats[2]=mean
-    let median = getMedian(array)
-    returnarraygetstats[3] = median
+    const returnobject = new Object();
 
-    let min = 100
-    let max = -100
+    let minimum = 100
+    let maximum = -100
     for (let i = 0; i < array.length; i++) {
          if (array[i] < min){
-             min = array[i]
+             minimum = array[i]
          }
 
-         if (array[i] > max){
-            max = array[i]
+         if (array[i] > maximum){
+            maximum = array[i]
         }
     }
 
+    returnobject.min=minimum
+    returnobject.median=getMedian(array)
+    returnobject.max=maximum
+    returnobject.variance=variance(array,((getSum(array)/array.length)))
+    returnobject.mean = ((getSum(array)/array.length))
+    returnobject.length = array.length
+    returnobject.sum = getSum(array)
+    returnobject.standard_deviation=Math.sqrt(variance(array,((getSum(array)/array.length))))
     
-    returnarraygetstats[4]=min
-    returnarraygetstats[5]=max
+    return returnobject
+    
 
-    let variance = 0
-
-    for (let i = 0; i < array.length; i++) {
-        let squareddif = ((array[i]-mean)*(array[i]-mean))
-        variance = variance + squareddif
-        
-    }
-    variance = variance / array.length
-
-    returnarraygetstats[6]=variance
-
-    let standard_deviation = Math.sqrt(variance)
-    returnarraygetstats[7]=standard_deviation
-    return returnarraygetstats
 }
 
