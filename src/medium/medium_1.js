@@ -94,12 +94,12 @@ export function getStatistics(array) {
     returnobject.min=minimum
     returnobject.median=getMedian(array)
     returnobject.max=maximum
-    let variance = variance(array, mean)
-    returnobject.variance=variance
+    let varianceval = variance(array, mean)
+    returnobject.variance=varianceval
     returnobject.mean = mean
     returnobject.length = array.length
     returnobject.sum = getSum(array)
-    returnobject.standard_deviation=Math.sqrt(variance)
+    returnobject.standard_deviation=Math.sqrt(varianceval)
     
     return returnobject
     
