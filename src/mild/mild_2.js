@@ -26,11 +26,8 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-   const returnarray = []
-   for (let i = 0; i < array.length; i++) {
-      returnarray.push(identifyVariable(i))
-  }
-  return returnarray
+   let returnarray = array.map(i=>identifyVariable(i))
+   return returnarray
 }
 
 /**
