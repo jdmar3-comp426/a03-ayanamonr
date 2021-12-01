@@ -126,7 +126,7 @@ export const everyEven = (arr, test) => {
 export const someEven = (arr, test) => {
     for (let i = 0; i < arr.length; i++){
         if (i%2 == 0){
-            if (test(arr[i])){
+            if (!(test(arr[i]))){
                 return true
             }
         }
@@ -177,6 +177,7 @@ export const allEvensAreOdd = (arr) => {
  *   array is an odd number. Use the "someEven" function in this function.
  */
 export const anEvenIsOdd = (arr) => {
+    return someEven(arr,x=> x % 2 == 1)
 
 };
 
