@@ -9,7 +9,9 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-
+    let returnnum = a+b
+    let returnstring = a+' + '+b+' = ' +returnnum
+    return returnstring
 }
 
 
@@ -24,7 +26,12 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-
+    const returnarray = [];
+    let currentnumber = startNumber;
+    for (let i = startNumber; i<= endNumber; i++) {
+        returnarray.push(i);
+    }
+    return returnarray;
 }
 
 /**
@@ -35,7 +42,21 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
+    let min = 100
+    let max = -100
+    for (let i = 0; i < numbers.length; i++) {
+         if (numbers[i] < min){
+             min = numbers[i]
+         }
 
+         if (numbers[i] > max){
+            max = numbers[i]
+        }
+    }
+
+    max = Number(max)
+    min = Number(min)
+    return {max, min}
 }
 
 /**
@@ -49,5 +70,20 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    let returndict = {};
+    for (let i = 0; i < array.length; i++){
+        if (returndict[array[i]]== null){ //if there's nothing in this position and it hasn't occured alreadyyyy
+            let amount = 0
+            for (let j = 0; j < array.length; j++){
+               if (array[j] == array[i]){
+                   amount = amount + 1
+               } 
+            }
+            returndict[array[i]] = amount;
 
+        }
+    }
+        return returndict
 }
+
+

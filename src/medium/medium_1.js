@@ -8,7 +8,11 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-
+    let sum = 0 
+    for (let i = 0; i< array.length; i++) {
+        sum = sum + Number(array[i]);
+    }
+    return sum 
 }
 
 
@@ -22,8 +26,34 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
+    var done = false;
+    while (!done) {
+        done = true;
+        for (var i = 1; i < array.length; i += 1) {
+            if (array[i - 1] > array[i]) {
+                done = false;
+                var tmp = array[i - 1];
+                array[i - 1] = array[i];
+                array[i] = tmp;
+            }
+        }
+    }
 
+    let lengthval = array.length;
+
+    //let returnval = lengthval
+    // If length = odd
+    if (lengthval % 2 == 1) {
+        let returnval = array[(lengthval / 2) - .5]
+        return returnval
+    }
+    else {              
+        let returnval = ((array[lengthval / 2] + array[(lengthval / 2) - 1])/ 2);
+        return returnval
+    }
 }
+
+
 
 /**
  * Calculates statistics (see below) on an array of numbers.
@@ -45,6 +75,32 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
+    const returnobject = new Object();
+    returnobject.length = array.length
+    returnobject.sum = getSum(array)
+    let mean = getSum(array)/array.length
+    returnobject.mean = mean
+    returnobject.median=getMedian(array)
+    let minimum = 100
+    let maximum = -100
+    for (let i = 0; i < array.length; i++) {
+         if (array[i] < minimum){
+             minimum = array[i]
+         }
+
+         if (array[i] > maximum){
+            maximum = array[i]
+        }
+    }
+
+    returnobject.min=minimum
+    returnobject.max=maximum
+    let varianceval = variance(array, mean)
+    returnobject.variance=varianceval
+    returnobject.standard_deviation=Math.sqrt(varianceval)
+    
+    return returnobject
+    
 
 }
 
